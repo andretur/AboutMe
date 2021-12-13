@@ -1,0 +1,29 @@
+with 
+  people as (select id
+            , first_name
+            , last_name
+            , month_of_birthday
+            , day_of_birthday
+            , zodiac_sign
+          from table_people_info
+            where id = 'a01b02t20'
+          ),
+  sport as ( select player_id
+              , sports
+            from table_sports_info
+              where player_id = 'a01b02t20'
+            ),
+  pets as ( select human_id
+               , pet_id
+               , pet as pet_name
+               , type_of_pet
+               , colour_of_pet
+               , gender_of_pet
+               , comments
+              from table_pets_info
+                where human_id = 'a01b02t20'
+             )
+select first_name, last_name, zodiac_sign, sports, pet_name, type_of_pet, comments
+from people
+  inner join sport on (people.id = sport.player_id)
+  inner join pets on (people.id = pets.human_id)
