@@ -1,5 +1,5 @@
 with 
-  people as (select id
+ people as (select id
             , first_name
             , last_name
             , month_of_birthday
@@ -27,3 +27,12 @@ select first_name, last_name, zodiac_sign, sports, pet_name, type_of_pet, commen
 from people
   inner join sport on (people.id = sport.player_id)
   inner join pets on (people.id = pets.human_id)
+
+
+first_name  last_name	zodiac_sign	sports								pet	type_of_pet	Comments
+Andrea		Tur	Sagittarius	[voleyball, gymnastics, water ski, ski, trekking, swimming]	Mimi	cat		Mom of 4
+Andrea		Tur	Sagittarius	[voleyball, gymnastics, water ski, ski, trekking, swimming]	Chanchi	cat		Mimi's first daughter
+Andrea		Tur	Sagittarius	[voleyball, gymnastics, water ski, ski, trekking, swimming]	Oso	cat		Chanchi's brother
+Andrea		Tur	Sagittarius	[voleyball, gymnastics, water ski, ski, trekking, swimming]	Eli	cat		Oso's sister
+Andrea		Tur	Sagittarius	[voleyball, gymnastics, water ski, ski, trekking, swimming]	Woody	cat		Eli's brother
+
